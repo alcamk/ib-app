@@ -5,36 +5,42 @@
 </head>
 <body>
 	 <form id="registro">
+
         <label>Nombre:</label>
         <input type="text" id="nombre" ><br><br>
+
         <label>Correo:</label>
-        <input type="text" id="corre" ><br><br>
+        <input type="email" id="correo" ><br><br>
+
         <label>Telefono:</label>
-        <input type="text" id="telefono" ><br><br>
+        <input type="number" id="telefono" ><br><br>
+
         <label>No. cuenta:</label>
-        <input type="text" id="cuenta" ><br><br>
+        <input type="number" id="cuenta" ><br><br>
+
         <label>Tipo de cliente:</label>
         <select name="select" id="cliente">
             <option value="Cliente">Cliente</option> 
             <option value="Inversor" selected>Inversor</option>
             <option value="Empleado">Empleado</option>
           </select><br><br>
-        <label>Tipo de inversoin:</label>
-        <select name="select" id="tipo">
+
+        <label>Tipo de inversion:</label>
+        <select name="select" id="tipoInversion">
             <option value="Dollar">Dollar</option> 
             <option value="Acciones" selected>Acciones</option>
           </select><br><br>
+
         <label>Inversion</label> 
-        <input type="text" id="inversion">
-        
+        <input type="number" id="inversion"><br><br>
         <button type="button" onclick="resultado()">Resultado</button><br><br>
 
         <label>Monto de inversion</label> 
-        <input type="text" id="montoInversion"><br><br>
+        <input type="number" id="montoInversion"><br><br>
 
         
 
       </form>
-	<script type="text/javascript" src="banco.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
