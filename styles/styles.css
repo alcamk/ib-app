@@ -1,13 +1,11 @@
 body{
-    margin:auto;
-    height:100%;
-    width:100%;
+    width: 100%;
 }
 
 .logo{
     padding-left: 5px;
-    width: 80px;
-    height: 80px;
+    width: 20px;
+    height: 20px;
     border-radius: 25px;
 }
 
@@ -35,10 +33,53 @@ a{
     color: black;
 }
 
+.tag-name{
+    width: auto;
+    height: 50px;
+    background-color: teal;
+    margin-top: -20px;
+    text-align: center;
+}
 
-@media screen and (max-width:615px) {
-    .nav-bar{
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+.container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 20px;
+    width: auto;
+    height: 600px;
+    margin-top: 10px;
+}
+
+.item{
+    text-align: center;
+    background-color: teal;
+}
+
+.container-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    width: auto;
+    height: 400px;
+    margin-top: 10px;
+}
+
+.item-2{
+    text-align: center;
+    background-color: teal;
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1px;
+    width: auto;
+    height: 200px;
+    margin-top: 10px;
+    background-color: violet;
+}
+
+.item-f{
+    text-align: center;
+    background-color: teal;
+}
