@@ -4,8 +4,8 @@ body{
 
 .logo{
     padding-left: 5px;
-    width: 20px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
     border-radius: 25px;
 }
 
@@ -44,23 +44,22 @@ a{
 .container{
     display: grid;
     grid-template-columns: 50% 50%;
-    column-gap: 20px;
     width: auto;
-    height: 600px;
+    height: auto;
     margin-top: 10px;
 }
 
 .item{
     text-align: center;
     background-color: teal;
+    margin: 5px;
 }
 
 .container-2{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
     width: auto;
-    height: 400px;
+    height: 600px;
     margin-top: 10px;
 }
 
@@ -71,15 +70,96 @@ a{
 
 .footer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 30% 30% 30%;
     column-gap: 1px;
     width: auto;
     height: 200px;
     margin-top: 10px;
     background-color: violet;
 }
-
 .item-f{
     text-align: center;
     background-color: teal;
 }
+
+.padre {
+    background-color: #fafafa;
+    padding: 1rem;
+    margin: 1rem;
+    width: auto;
+  }
+
+  .sq-sec {
+    background-color: yellow;
+    width: 80%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .sq-sec2 {
+    background-color: yellow;
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .contenedor-img{
+      width: auto;
+      height: 350px;
+      background-color: yellowgreen;
+      padding: .5rem;
+      margin: .5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .img-ctn{
+      background-color: aquamarine;
+      margin: 1px;
+  }
+
+  .test-ph{
+      margin: 20px 10px 10px 10px;
+  }
+
+  .img-div-il{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding-top: 50px;
+  }
+
+  .img-src{
+    border-radius: 50%;
+    background-color: palevioletred;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qns-cont{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+  }
+
+  .qns-itm{
+      background-color: peru;
+      width: auto;
+      height: 400px;
+  }
+
+  .qns-itm img{
+      width: 300px;
+      height: 300px;
+      padding: 50px;
+  }
+
+ .qnsoy{
+     padding-top: 50px;
+     margin: 0em;
+ }
