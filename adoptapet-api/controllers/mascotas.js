@@ -1,38 +1,47 @@
-/*  Archivo controllers/usuarios.js
- *  Simulando la respuesta de objetos Usuario
+/*  Archivo controllers/mascotas.js
+ *  Simulando la respuesta de objetos Mascota
  *  en un futuro aquí se utilizarán los modelos
  */
 
-const Mascota = require('../models/Mascota')
+const mongoose = require('mongoose')
+const Mascota = mongoose.model('Mascota')
 
-function crearMascota(req, res) {
-  // Instanciaremos un nuevo usuario utilizando la clase usuario
+function crearMascota(req, res, next) {
   var mascota = new Mascota(req.body)
-  res.status(201).send(mascota)
+  mascota.anunciante = mongoose.Types.ObjectId(req.usuario.id)
+  mascota.estado = 'disponible'
+
+  mascota.save()
+    .then(mascota => res.status(201).send(mascota))
+    .catch(next)
 }
 
-function obtenerMascota(req, res) {
-  // Simulando dos usuarios y respondiendolos
-  var mascota1 = new Mascota(1, 'Baco', 'Mestizo')
-  var mascota2 = new Mascota(2, 'Mushu', 'Shitzu')
-  res.send([mascota1, mascota2])
+function obtenerMascotas(req, res, next) {
+  if(req.params.id) {
+    Mascota.findOne({_id: req.params.id})
+      .populate('anunciante')
+      .then((mascota) => res.json(mascota))
+      .catch(next)
+  }
+  else {
+    Mascota.find()
+      .then(mascotas => res.json(mascotas))
+      .catch(next)
+  }
 }
 
-function modificarMascota(req, res) {
-  // simulando un usuario previamente existente que el usuario utili
-  var mascota1 = new Mascota(req.params.id, 'Baco', 'Mestizo')
-  var modificaciones = req.body
-  mascota1 = { ...mascota1, ...modificaciones }
-  res.send(mascota1)
+function modificarMascota(req, res, next) {
+  // Implementar por los estudiantes estrella de Bedu (sí, los queremos mucho a ustedes que tienen este archivo en su poder)
 }
 
 function eliminarMascota(req, res) {
-  res.status(200).send(`Mascota ${req.params.id} eliminada`);
+  // Implementar por los estudiantes estrella de Bedu (sí, los queremos mucho a ustedes que tienen este archivo en su poder)
+  res.status(200).send(`Mascota ${req.params.id} eliminado`);
 }
 
 module.exports = {
   crearMascota,
-  obtenerMascota,
+  obtenerMascotas,
   modificarMascota,
   eliminarMascota
 }

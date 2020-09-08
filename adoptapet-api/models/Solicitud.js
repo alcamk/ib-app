@@ -1,15 +1,25 @@
-// Solicitud.js
-/** Clase que representa una solicitud de adopción */
-class Solicitud {
-  constructor(id, idMascota, fechaDeCreacion, idUsuarioAnunciante, idUsuarioSolicitante, estado) {
-    this.id = id;
-    this.idMascota = idMascota;
-    this.fechaDeCreacion = fechaDeCreacion;
-    this.idUsuarioAnunciante = idUsuarioAnunciante;
-    this.idUsuarioSolicitante = idUsuarioSolicitante;
-    this.estado = estado;
-  }
+const mongoose = require('mongoose');
 
-}
+var SolicitudSchema = new mongoose.Schema(
+  {
+    mascota: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Mascota",
+    },
+    anunciante: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Usuario",
+    },
+    solicitante: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Usuario",
+    },
+    estado: { type: String, enum: ["aceptada", "cancelada", "pendiente"] },
+  },
+  { collection: "solicitudes", timestamps: true }
+);
 
-module.exports = Solicitud;
+mongoose.model('Solicitud', SolicitudSchema)
